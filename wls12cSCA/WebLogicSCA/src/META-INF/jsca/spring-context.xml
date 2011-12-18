@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sca="http://xmlns.oracle.com/weblogic/weblogic-sca"
+       xmlns:wlsb="http://xmlns.oracle.com/weblogic/weblogic-sca-binding"
+       xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	       http://xmlns.oracle.com/weblogic/weblogic-sca http://xmlns.oracle.com/weblogic/weblogic-sca/1.0/weblogic-sca.xsd
+	       http://xmlns.oracle.com/weblogic/weblogic-sca-binding http://xmlns.oracle.com/weblogic/weblogic-sca-binding/1.0/weblogic-sca-binding.xsd
+       ">
+
+ <sca:service target="loggerPassThrough" 
+              name="LogServiceWS"
+              type="nl.amis.wls.sca.spring.ILoggerComponent">
+   <wlsb:binding.ws xmlns="http://xmlns.oracle.com/sca/1.0"
+                    name="LoggerService_WS" 
+                    uri="/LoggerService_Uri"
+                    port="LoggerService_PORT"/>
+ </sca:service>
+
+ <bean class="nl.amis.wls.sca.spring.LoggerPassThrough" 
+       name="loggerPassThrough">
+    <property name="reference" 
+              ref="loggerEJBReference" />
+ </bean>
+
+ <sca:reference name="loggerEJBReference"
+                type="nl.amis.wls.sca.spring.ILoggerComponent">
+   <wlsb:binding.ejb uri="LoggerService_EJB30_JNDI" />
+ </sca:reference>
+
+
+
+ <sca:service target="logger" 
+              name="LogServiceEJB"
+              type="nl.amis.wls.sca.spring.ILoggerComponent">
+   <wlsb:binding.ejb uri="LoggerService_EJB30_JNDI" 
+                     remote="true"
+                     name="LoggerService_EJB"/>
+ </sca:service>
+
+ <bean class="nl.amis.wls.sca.spring.LoggerComponentImpl" 
+       name="logger">
+    <property name="output" 
+              ref="loggerOutput" />
+ </bean>
+
+ <bean id="loggerOutput" 
+       class="nl.amis.wls.sca.spring.LoggerOutput">
+ </bean>
+
+</beans>

@@ -1,0 +1,12 @@
+<root>
+  <facet id="spring.core">
+    <node name="libprov">
+      <attribute name="provider-id" value="user-library-provider-spring"/>
+    </node>
+  </facet>
+  <facet id="oracle.weblogic.sca">
+    <node name="libprov">
+      <attribute name="provider-id" value="wls-shared-library-provider-weblogic-sca-war-1033"/>
+    </node>
+  </facet>
+</root>
