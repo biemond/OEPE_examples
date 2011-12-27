@@ -1,0 +1,3 @@
+service { CRUD-DB entities = { JpaProject = "HrJPA" , entity =
+"nl.amis.model.hr.entities.Department" {} , entity =
+"nl.amis.model.hr.entities.Employee" {} } }

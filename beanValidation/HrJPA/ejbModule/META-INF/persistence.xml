@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="HrJPA">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>jdbc/hrDS</jta-data-source>
+		<class>nl.amis.model.hr.entities.Department</class>
+		<class>nl.amis.model.hr.entities.Employee</class>
+		<!--   validation-mode>NONE</validation-mode-->
+		<properties>
+			<property name="eclipselink.target-server" value="WebLogic"/>
+			<property name="eclipselink.logging.level" value="FINEST"/>
+		</properties>
+	</persistence-unit>
+</persistence>

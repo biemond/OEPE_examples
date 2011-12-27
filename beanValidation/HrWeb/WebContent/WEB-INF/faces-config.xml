@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config 
+    metadata-complete="true" 
+    version="2.0" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+  <application>
+    <default-render-kit-id>org.apache.myfaces.trinidad.core</default-render-kit-id>
+	  <resource-bundle>
+		<base-name>resources.application</base-name>
+		<var>message</var>
+	   </resource-bundle>
+     </application>  
+    <managed-bean>
+        <managed-bean-name>dataBean</managed-bean-name>
+        <managed-bean-class>nl.amis.web.beans.DataBean</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    
+</faces-config>
