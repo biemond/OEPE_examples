@@ -20,6 +20,5 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="oracle.eclipse.tools.weblogic.lib.shared/jsf/exact/2.0"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

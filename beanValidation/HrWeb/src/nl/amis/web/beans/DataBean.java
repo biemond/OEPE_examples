@@ -1,5 +1,6 @@
 package nl.amis.web.beans;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
@@ -21,19 +22,20 @@ import org.apache.myfaces.extensions.validator.baseval.annotation.Pattern;
 import nl.amis.mode.hr.services.HrSessionLocal;
 import nl.amis.model.hr.entities.Department;
 
-@ManagedBean(name = "dataBean")
+
+@ManagedBean( name = "dataBean")
 @ViewScoped
-public class DataBean {
+public class DataBean implements Serializable  {
 
 	private static final long serialVersionUID = -6996992412087723373L;
 
 	@Null
     @Size(min=2,max=10)
-	private String departmentName;
+	private String departmentName = "fielda";
 
 	@Length(minimum=2 , maximum=50)
 	@Pattern(value="[A-Za-z ]*" , validationErrorMsgKey="locationValidation")
-	private String departmentLocation;
+	private String departmentLocation = "fieldb";
 
 	
 

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+<html     xmlns="http://www.w3.org/1999/xhtml"
           xmlns:f="http://java.sun.com/jsf/core" 
           xmlns:h="http://java.sun.com/jsf/html"
           xmlns:trh="http://myfaces.apache.org/trinidad/html"
           xmlns:tr="http://myfaces.apache.org/trinidad">
-  <jsp:directive.page contentType="text/html;charset=utf-8"/>
+          
+  <f:loadBundle basename="resources.application" var="message"/>
   <f:view>
     <tr:document title="Bean and ExtVal validation">
       <tr:form>
         <tr:messages/>
-        <tr:panelGroupLayout layout="vertical">
+       <tr:panelGroupLayout layout="vertical">
           <f:facet name="separator">
             <tr:separator/>
           </f:facet>
@@ -36,7 +37,6 @@
               <tr:panelGroupLayout layout="vertical">
                 <tr:outputText value="Id: #{row.departmentId}"/>
                 <tr:outputText value="Name: #{row.departmentName}"/>
-
               </tr:panelGroupLayout>
             </f:facet>
           </tr:table>
@@ -44,4 +44,4 @@
       </tr:form>
     </tr:document>
   </f:view>
-</jsp:root>
+</html>
