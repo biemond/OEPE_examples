@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<html     xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:f="http://java.sun.com/jsf/core" 
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:tr="http://myfaces.apache.org/trinidad">
+  <f:view>
+    <tr:document title="Bean and ExtVal validation">
+      <tr:form>
+        <tr:messages/>
+       <tr:panelGroupLayout layout="vertical">
+          <f:facet name="separator">
+            <tr:separator/>
+          </f:facet>
+          <tr:inputText label="Test for bean validation (departmentName)" 
+                        value="#{dataBean.departmentName}" autoSubmit="true"/>
+          <tr:inputText label="Test for extval validation (departmentLocation)" 
+                        value="#{dataBeanCDI.departmentLocation}" autoSubmit="true"/>
+          <tr:commandButton text="Test JPA Validator"
+                            actionListener="#{dataBean.addDepartment}"/>
+          <tr:table allDetailsEnabled="true" var="row" 
+                    rowBandingInterval="2" value="#{dataBean.allDepartments}" 
+                    rows="10"
+                    summary="Department JPA validation">
+            <f:facet name="actions">
+              <tr:outputText value="(Actions)"/>
+            </f:facet>
+            <tr:column headerText="Id">
+              <tr:outputText value="#{row.departmentId}"/>
+            </tr:column>
+            <tr:column headerText="Names">
+              <tr:inputText value="#{row.departmentName}" autoSubmit="true"/>
+            </tr:column>
+            <f:facet name="detailStamp">
+              <tr:panelGroupLayout layout="vertical">
+                <tr:outputText value="Id: #{row.departmentId}"/>
+                <tr:outputText value="Name: #{row.departmentName}"/>
+              </tr:panelGroupLayout>
+            </f:facet>
+          </tr:table>
+        </tr:panelGroupLayout>
+      </tr:form>
+    </tr:document>
+  </f:view>
+</html>

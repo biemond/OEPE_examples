@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="jsftest" version="3.0">
+	<display-name>showcase</display-name>
+
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Production</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>org.apache.myfaces.extensions.validator.CUSTOM_MESSAGE_BUNDLE</param-name>
+		<param-value>resources.application</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>org.apache.myfaces.trinidad.ALTERNATE_VIEW_HANDLER</param-name>
+		<param-value>com.sun.facelets.FaceletViewHandler</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+		<param-value>.xhtml</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>client</param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>trinidad</filter-name>
+		<filter-class>org.apache.myfaces.trinidad.webapp.TrinidadFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>trinidad</filter-name>
+		<servlet-name>faces</servlet-name>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>resources</servlet-name>
+		<servlet-class>org.apache.myfaces.trinidad.webapp.ResourceServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>resources</servlet-name>
+		<url-pattern>/adf/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>faces</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>faces</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
