@@ -5,7 +5,7 @@
           xmlns:trh="http://myfaces.apache.org/trinidad/html"
           xmlns:tr="http://myfaces.apache.org/trinidad">
   <f:view>
-    <tr:document title="Bean and ExtVal validation">
+    <tr:document title="Bean and ExtVal validation 2">
       <tr:form>
         <tr:messages/>
        <tr:panelGroupLayout layout="vertical">
@@ -16,6 +16,17 @@
                         value="#{dataBean.departmentName}" autoSubmit="true"/>
           <tr:inputText label="Test for extval validation (departmentLocation)" 
                         value="#{dataBeanCDI.departmentLocation}" autoSubmit="true"/>
+           
+                        
+          <tr:inputText label="CDI departmentLocation2" 
+                        value="#{dataBean.departmentLocation2}"/>
+          <tr:inputText label="CDI departmentLocation2" 
+                        value="#{dataBean.departmentLocation2}"/>
+
+          <tr:outputText label="Test for JCache ann. (departmentName)" 
+                        value="#{dataBean.departmentName2}"/>
+
+
           <tr:commandButton text="Test JPA Validator"
                             actionListener="#{dataBean.addDepartment}"/>
           <tr:table allDetailsEnabled="true" var="row" 

@@ -5,4 +5,7 @@
         <wls:param-name>webapp.encoding.default</wls:param-name>
         <wls:param-value>UTF-8</wls:param-value>
     </wls:application-param>
+    <wls:fast-swap>
+        <wls:enabled>true</wls:enabled>
+    </wls:fast-swap>
 </wls:weblogic-application>

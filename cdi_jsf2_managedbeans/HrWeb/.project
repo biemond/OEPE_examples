@@ -3,7 +3,6 @@
 	<name>HrWeb</name>
 	<comment></comment>
 	<projects>
-		<project>HrJPA</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

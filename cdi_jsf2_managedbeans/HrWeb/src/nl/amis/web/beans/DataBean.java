@@ -29,24 +29,43 @@ public class DataBean implements Serializable  {
 
 	private static final long serialVersionUID = -6996992412087723373L;
 
+	
 	@NotNull
     @Size(min=2,max=10)
-	private String departmentName = "fieldMBean";
+	private String departmentName = "fieldMBean 3";
+
+	@SuppressWarnings("unused")
+	private String departmentLocation2;
+	
+	public String getDepartmentLocation2() {
+		return dataBeanCDI.getDepartmentLocation();
+	}
+
+	
+	public void setDepartmentLocation2(String departmentLocation2) {
+		this.departmentLocation2 = departmentLocation2;
+	}
 
 	@EJB
     private HrSessionLocal sessionFacade;
 
 	@Inject
 	private DataBeanCDI dataBeanCDI;
+
+	@Inject
+	private JCachebean cacheBean;
 	
-    public void setSessionFacade(HrSessionLocal sessionFacade) {
-        this.sessionFacade = sessionFacade;
-    }
+	public String getDepartmentName2() {
+		
+		cacheBean.storeKey("greetings", "hello world");
+		
+		return cacheBean.findKey("greetings");
+	}
 
-    public HrSessionLocal getSessionFacade() {
-        return sessionFacade;
-    }
+	public void setDepartmentName2(String departmentName2 ){
+	}
 
+	
     private Validator validator;
 
     public void addDepartment(ActionEvent event) {
@@ -73,11 +92,11 @@ public class DataBean implements Serializable  {
        if ( violations.size() > 0 ) {
     	   return;
        }
-       getSessionFacade().persistDepartment(dept);
+       sessionFacade.persistDepartment(dept);
     }
     
     public List<Department> getAllDepartments() {
-    	List<Department> result = getSessionFacade().getAllDepartments();
+    	List<Department> result = sessionFacade.getAllDepartments();
     	return result;
     }
 

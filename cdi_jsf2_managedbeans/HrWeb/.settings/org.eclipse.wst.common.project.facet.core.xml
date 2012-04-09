@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
-  <runtime name="Oracle WebLogic Server 12c (12.1.1)"/>
+  <runtime name="Oracle WebLogic Server 12c_v2 (12.1.1)"/>
   <fixed facet="jst.web"/>
   <fixed facet="java"/>
   <fixed facet="wst.jsdt.web"/>
