@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-web-app xmlns:wls="http://xmlns.oracle.com/weblogic/weblogic-web-app" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.3/weblogic-web-app.xsd">
+    <wls:weblogic-version>10.3.6</wls:weblogic-version>
+    <wls:context-root>ItunesClientWeb</wls:context-root>
+    <wls:library-ref>
+        <wls:library-name>adf.oracle.domain.webapp</wls:library-name>
+        <wls:specification-version>1.0</wls:specification-version>
+        <wls:exact-match>false</wls:exact-match>
+    </wls:library-ref>
+    <wls:library-ref>
+        <wls:library-name>jsf</wls:library-name>
+        <wls:specification-version>1.2</wls:specification-version>
+        <wls:exact-match>true</wls:exact-match>
+    </wls:library-ref>
+    <wls:library-ref>
+        <wls:library-name>jstl</wls:library-name>
+        <wls:specification-version>1.2</wls:specification-version>
+        <wls:exact-match>true</wls:exact-match>
+    </wls:library-ref>
+    <wls:jsp-descriptor>
+        <wls:keepgenerated>true</wls:keepgenerated>
+        <wls:working-dir>C:\projecten\workspace\adf11gItunes\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\adfDomain\work\ItunesClientWeb</wls:working-dir>
+        <wls:debug>true</wls:debug>
+    </wls:jsp-descriptor>
+</wls:weblogic-web-app>

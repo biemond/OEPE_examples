@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-application xmlns:wls="http://xmlns.oracle.com/weblogic/weblogic-application" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/javaee_5.xsd http://xmlns.oracle.com/weblogic/weblogic-application http://xmlns.oracle.com/weblogic/weblogic-application/1.3/weblogic-application.xsd">
+    <!--weblogic-version:10.3.6-->
+    <wls:xml>
+        <wls:parser-factory>
+            <wls:saxparser-factory>oracle.xml.jaxp.JXSAXParserFactory</wls:saxparser-factory>
+            <wls:document-builder-factory>oracle.xml.jaxp.JXDocumentBuilderFactory</wls:document-builder-factory>
+            <wls:transformer-factory>oracle.xml.jaxp.JXSAXTransformerFactory</wls:transformer-factory>
+        </wls:parser-factory>
+    </wls:xml>
+    <wls:application-param>
+        <wls:param-name>webapp.encoding.default</wls:param-name>
+        <wls:param-value>UTF-8</wls:param-value>
+    </wls:application-param>
+    <wls:listener>
+        <wls:listener-class>oracle.adf.share.weblogic.listeners.ADFApplicationLifecycleListener</wls:listener-class>
+    </wls:listener>
+    <wls:listener>
+        <wls:listener-class>oracle.mds.lcm.weblogic.WLLifecycleListener</wls:listener-class>
+    </wls:listener>
+    <wls:library-ref>
+        <wls:library-name>adf.oracle.domain</wls:library-name>
+        <wls:specification-version>1.0</wls:specification-version>
+        <wls:implementation-version>11.1.1.1.0</wls:implementation-version>
+        <wls:exact-match>false</wls:exact-match>
+    </wls:library-ref>
+</wls:weblogic-application>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adfc-config
+    xmlns="http://xmlns.oracle.com/adf/controller"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.oracle.com/adf/controller http://xmlns.oracle.com/adf/controller/adfc-config_1_0.xsd"
+    version="1.2">
+    <view id="index">
+        <page>/index.jspx</page>
+    </view>
+    <managed-bean>
+        <managed-bean-name>Search</managed-bean-name>
+        <managed-bean-class>nl.amis.view.beans.SearchBean</managed-bean-class>
+        <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+</adfc-config>

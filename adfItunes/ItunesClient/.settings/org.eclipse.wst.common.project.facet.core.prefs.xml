@@ -1,0 +1,7 @@
+<root>
+  <facet id="oracle.adf.ear">
+    <node name="libprov">
+      <attribute name="provider-id" value="no-op-library-provider-adf-ear-11.1.1"/>
+    </node>
+  </facet>
+</root>

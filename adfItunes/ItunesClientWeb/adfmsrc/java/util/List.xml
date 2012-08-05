@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel"
+	version="11.1.1.61.11" id="List" Package="java.util"
+	BeanClass="java.util.List" isJavaBased="true">
+
+</JavaBean>

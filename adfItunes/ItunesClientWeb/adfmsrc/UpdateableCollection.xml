@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel"
+	version="11.1.1.61.11" id="UpdateableCollection" Package=""
+	BeanClass="UpdateableCollection" isJavaBased="false">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<BuiltinOperation id="Create"></BuiltinOperation>
+	<BuiltinOperation id="Delete"></BuiltinOperation>
+	<BuiltinOperation id="IteratorExecute"></BuiltinOperation>
+	<BuiltinOperation id="First"></BuiltinOperation>
+	<BuiltinOperation id="Last"></BuiltinOperation>
+	<BuiltinOperation id="Previous"></BuiltinOperation>
+	<BuiltinOperation id="Next"></BuiltinOperation>
+	<BuiltinOperation id="NextSet"></BuiltinOperation>
+	<BuiltinOperation id="PreviousSet"></BuiltinOperation>
+	<BuiltinOperation id="removeRowWithKey"></BuiltinOperation>
+	<BuiltinOperation id="setCurrentRowWithKey"></BuiltinOperation>
+	<BuiltinOperation id="setCurrentRowWithKeyValue"></BuiltinOperation>
+</JavaBean>

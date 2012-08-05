@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+	version="11.1.1.61.11" id="DataBindings" Package="view"
+	SeparateXMLFiles="false" ClientType="Generic">
+	<pageMap>
+		<page path="/index.jspx" usageId="view_indexPageDef1"></page>
+		
+	</pageMap>
+
+	<pageDefinitionUsages>
+		<page id="view_indexPageDef1"
+			path="view.pageDefs.indexPageDef">
+		</page>
+		
+	</pageDefinitionUsages>
+	<dataControlUsages>
+		<dc id="ITunesClient" path="model.ITunesClient"></dc>
+	</dataControlUsages>
+</Application>
