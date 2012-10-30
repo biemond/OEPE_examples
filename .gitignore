@@ -1,3 +1,5 @@
 .svn
-.class
 .DS_Store
+.data/
+deploy/
+classes/
