@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="CoherenceJPAEAR">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="CoherenceJPA.gar" deploy-path="/" handle="module:/resource/CoherenceJPA/CoherenceJPA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="CoherenceJPAWeb" deploy-path="/" handle="module:/resource/CoherenceJPAWeb/CoherenceJPAWeb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="HrJPA.jar" deploy-path="/lib" handle="module:/resource/HrJPA/HrJPA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

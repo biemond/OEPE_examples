@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+ 
+<cache-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://xmlns.oracle.com/coherence/coherence-cache-config"
+              xsi:schemaLocation="http://xmlns.oracle.com/coherence/coherence-cache-config http://xmlns.oracle.com/coherence/coherence-cache-config/1.2/coherence-cache-config.xsd">
+ 
+  <defaults>
+    <serializer system-property="tangosol.coherence.serializer"/>
+    <socket-provider system-property="tangosol.coherence.socketprovider">tcp</socket-provider>
+  </defaults>
+  <caching-scheme-mapping>
+    <cache-mapping>
+      <cache-name>Employee</cache-name>
+      <scheme-name>jpa-distributed</scheme-name>
+    </cache-mapping>
+    <cache-mapping>
+      <cache-name>Department</cache-name>
+      <scheme-name>jpa-distributed</scheme-name>
+    </cache-mapping>
+  </caching-scheme-mapping>
+  <caching-schemes>
+    <distributed-scheme>
+      <scheme-name>jpa-distributed</scheme-name>
+      <service-name>EclipseLinkJPA</service-name>
+      <backing-map-scheme>
+        <read-write-backing-map-scheme>
+          <internal-cache-scheme>
+            <local-scheme/>
+          </internal-cache-scheme>
+          <cachestore-scheme>
+            <class-scheme>
+              <class-name>oracle.eclipselink.coherence.standalone.EclipseLinkJPACacheStore</class-name>
+              <init-params>
+                <init-param>
+                  <param-type>java.lang.String</param-type>
+                  <param-value>{cache-name}</param-value>
+                </init-param>
+                <init-param>
+                  <param-type>java.lang.String</param-type>
+                  <param-value>HrJPA</param-value>
+                </init-param>
+              </init-params>
+            </class-scheme>
+          </cachestore-scheme>
+        </read-write-backing-map-scheme>
+      </backing-map-scheme>
+      <autostart>true</autostart>
+    </distributed-scheme>
+
+  </caching-schemes>
+</cache-config>

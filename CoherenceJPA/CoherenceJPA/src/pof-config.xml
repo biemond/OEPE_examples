@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<pof-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://xmlns.oracle.com/coherence/coherence-pof-config"
+    xsi:schemaLocation="http://xmlns.oracle.com/coherence/coherence-pof-config http://xmlns.oracle.com/coherence/coherence-pof-config/1.2/coherence-pof-config.xsd">
+	<user-type-list>
+	<!-- include all "standard" Coherence POF user types -->
+	<include>coherence-pof-config.xml</include>
+    <include>coherence-rest-pof-config.xml</include>
+	</user-type-list>
+</pof-config>
