@@ -1,19 +1,27 @@
 <?xml version="1.0"?>
 <rest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns="http://xmlns.oracle.com/coherence/coherence-rest-config"
-      xsi:schemaLocation=
-         "http://xmlns.oracle.com/coherence/coherence-rest-config
-      coherence-rest-config.xsd">
+      xsi:schemaLocation="http://xmlns.oracle.com/coherence/coherence-rest-config coherence-rest-config.xsd">
   <resources>
     <resource>
       <cache-name>Department</cache-name>
-      <key-class>java.lang.String</key-class>
+      <key-class>java.lang.Integer</key-class>
       <value-class>nl.amis.model.hr.Department</value-class>
+      <query>
+        <name>location1700</name>
+        <expression>locationId is 1700</expression>
+      </query>
+      <query>
+        <name>location</name>
+        <expression>locationId is (:locationId;int)</expression>
+      </query>
+      <direct-query enabled="true"/>
     </resource>
     <resource>
       <cache-name>Employee</cache-name>
-      <key-class>java.lang.String</key-class>
+      <key-class>java.lang.Integer</key-class>
       <value-class>nl.amis.model.hr.Employee</value-class>
+      <direct-query enabled="true"/>
     </resource>
   </resources>
 </rest>

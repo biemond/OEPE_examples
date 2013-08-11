@@ -20,40 +20,42 @@ import java.util.List;
 public class Department implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	public Department() {
+	}
+	
+	
 	@Id
 	@Column(name="DEPARTMENT_ID")
-	private long departmentId;
+	private Integer departmentId;
 
 	@Column(name="DEPARTMENT_NAME")
 	private String departmentName;
 
 	@Column(name="LOCATION_ID")
-	private java.math.BigDecimal locationId;
+	private Integer locationId;
 
 	@Column(name="MANAGER_ID")
-	private Long managerId;
-
-	public Long getManagerId() {
-		return managerId;
-	}
-
-	public void setManagerId(Long managerId) {
-		this.managerId = managerId;
-	}
+	private Integer managerId;
 
 	//bi-directional many-to-one association to Employee
 	@XmlTransient
 	@OneToMany(mappedBy="department")
 	private List<Employee> employees;
-
-	public Department() {
+	
+	
+	public Integer getManagerId() {
+		return managerId;
 	}
 
-	public long getDepartmentId() {
+	public void setManagerId(Integer managerId) {
+		this.managerId = managerId;
+	}
+
+	public Integer getDepartmentId() {
 		return this.departmentId;
 	}
 
-	public void setDepartmentId(long departmentId) {
+	public void setDepartmentId(Integer departmentId) {
 		this.departmentId = departmentId;
 	}
 
@@ -65,11 +67,11 @@ public class Department implements Serializable {
 		this.departmentName = departmentName;
 	}
 
-	public java.math.BigDecimal getLocationId() {
+	public Integer getLocationId() {
 		return this.locationId;
 	}
 
-	public void setLocationId(java.math.BigDecimal locationId) {
+	public void setLocationId(Integer locationId) {
 		this.locationId = locationId;
 	}
 

@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import nl.amis.model.hr.Department;
-
 import com.tangosol.net.CacheFactory;
 import com.tangosol.net.NamedCache;
 
@@ -38,13 +36,13 @@ public class CoherenceServlet extends HttpServlet {
 
         NamedCache employee = CacheFactory.getCache("Employee");
         for ( int i = 1 ; i < 1000 ; i++) {
-           employee.get(Long.valueOf(i));
+           employee.get(i);
         }
         
         NamedCache department = CacheFactory.getCache("Department");
 
-        for ( int i = 1 ; i < 300 ; i++) {
-           department.get(Long.valueOf(i));
+        for ( int i = 10 ; i < 300 ; i = i + 10) {
+           department.get(i);
         }
 
         response.setContentType("text/html; charset=ISO-8859-1");

@@ -4,12 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-import static javax.persistence.FetchType.LAZY;
 
 
 /**
@@ -21,11 +18,15 @@ import static javax.persistence.FetchType.LAZY;
 @Table(name="EMPLOYEES")
 @NamedQuery(name="Employee.findAll", query="SELECT e FROM Employee e")
 public class Employee implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
+	public Employee() {
+	}
+	
 	@Id
 	@Column(name="EMPLOYEE_ID")
-	private long employeeId;
+	private Integer employeeId;
 
 	@Column(name="COMMISSION_PCT")
 	private BigDecimal commissionPct;
@@ -56,25 +57,23 @@ public class Employee implements Serializable {
 	private Department department;
 
 	@Column(name="MANAGER_ID")
-	private Long managerId;
+	private Integer managerId;
 
 
-	public Long getManagerId() {
+	public Integer getManagerId() {
 		return managerId;
 	}
 
-	public void setManagerId(Long managerId) {
+	public void setManagerId(Integer managerId) {
 		this.managerId = managerId;
 	}
 
-	public Employee() {
-	}
 
-	public long getEmployeeId() {
+	public Integer getEmployeeId() {
 		return this.employeeId;
 	}
 
-	public void setEmployeeId(long employeeId) {
+	public void setEmployeeId(Integer employeeId) {
 		this.employeeId = employeeId;
 	}
 

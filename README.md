@@ -14,7 +14,11 @@ adfItunes
 =========
 ADF binding and ADF rich faces with OEPE and this calls the itunes rest service. 
 
+EclipseLink-JPA-RS
+==================
+Demo project Eclipseing JPA-RS, With the release of EclipseLink 2.4, JPA persistence units can be accessed using REST with JSON or XML formatted messages. The 2.4 version supports JPA-RS which is a RESTful API for dealing with JPA. 
 
 CoherenceJPA
 ============
-Coherence JPA demo project, Build in Eclipse OEPE 12.1.2 with a Coherence GAR / REST
+Coherence JPA demo project deployed on a managed Coherece Server, Build with Eclipse OEPE 12.1.2 with a Coherence GAR / REST  
+Full with REST examples, direct queries + named queries 
