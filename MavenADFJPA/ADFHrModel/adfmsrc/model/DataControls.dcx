@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DataControlConfigs version="12.01.02.0.0" id="DataControls" Package="model" xmlns="http://xmlns.oracle.com/adfm/configuration">
+   <AdapterDataControl id="HrDataBeanLocal" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl" ImplDef="oracle.adfinternal.model.adapter.ejb.EjbDCDefinition" SupportsTransactions="false" SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false" SupportsFindMode="false" SupportsUpdates="true" Definition="nl.amis.hr.services.HrDataBeanLocal" BeanClass="nl.amis.hr.services.HrDataBeanLocal" xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+      <CreatableTypes>
+         <TypeInfo FullName="nl.amis.hr.model.Department"/>
+         <TypeInfo FullName="nl.amis.hr.model.Employee"/>
+      </CreatableTypes>
+      <Source>
+         <ejb-definition ejb-version="3.1" ejb-name="HrDataBean" ejb-type="Session" ejb-business-interface="nl.amis.hr.services.HrDataBeanLocal" ejb-interface-type="local" DataControlHandler="oracle.adf.model.adapter.bean.jpa.JPQLDataFilterHandler" AccessMode="scrollable" EagerPersist="false" xmlns="http://xmlns.oracle.com/adfm/adapter/ejb"/>
+      </Source>
+   </AdapterDataControl>
+</DataControlConfigs>

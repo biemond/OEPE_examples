@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>nl.amis.oepe</groupId>
+    <artifactId>ADF12cHr</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <adf.version>12.1.2.0</adf.version>
+    </properties>
+
+    <modules>
+        <module>ADFHrModel</module>
+        <module>ADF12cHrAppWeb</module>
+        <module>ADF12cHrApp</module>
+    </modules>
+
+  <distributionManagement>
+     <repository>
+       <id>central</id>
+       <name>hudson.alfa.local-releases</name>
+       <url>http://hudson:8081/artifactory/libs-release-local</url>
+       <uniqueVersion>false</uniqueVersion>
+     </repository>
+     <snapshotRepository>
+       <id>snapshots</id>
+       <name>hudson.alfa.local-snapshots</name>
+       <url>http://hudson:8081/artifactory/libs-snapshot-local</url>
+       <uniqueVersion>false</uniqueVersion>
+     </snapshotRepository>
+  </distributionManagement>
+
+
+</project>

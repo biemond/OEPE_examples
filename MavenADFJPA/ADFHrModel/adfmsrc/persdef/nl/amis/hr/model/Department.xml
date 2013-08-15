@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PDefViewObject version="12.01.02.0.0" Name="Department" xmlns="http://xmlns.oracle.com/bc4j">
+   <PDefAttribute Name="departmentId">
+      <Properties>
+         <SchemaBasedProperties>
+            <LABEL ResId="${adfBundle['model.ModelBundle']['nl.amis.hr.model.Department.departmentId_LABEL']}"/>
+         </SchemaBasedProperties>
+      </Properties>
+   </PDefAttribute>
+   <PDefAttribute Name="managerId" LOVName="LOV_managerId">
+      <Properties>
+         <SchemaBasedProperties>
+            <LABEL ResId="${adfBundle['model.ModelBundle']['nl.amis.hr.model.Department.managerId_LABEL']}"/>
+            <CONTROLTYPE Value="combo_lov"/>
+         </SchemaBasedProperties>
+      </Properties>
+   </PDefAttribute>
+   <ListBinding Name="LOV_managerId" ListVOName="LOV_employeeFindAll">
+      <AttrArray Name="AttrNames">
+         <Item Value="managerId"/>
+      </AttrArray>
+      <AttrArray Name="ListAttrNames">
+         <Item Value="employeeId"/>
+      </AttrArray>
+   </ListBinding>
+   <ViewAccessor Name="LOV_employeeFindAll" ViewInstanceName="datacontrol.employeeFindAll" RowLevelBinds="true"/>
+</PDefViewObject>

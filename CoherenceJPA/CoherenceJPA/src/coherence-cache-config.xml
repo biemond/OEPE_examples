@@ -45,6 +45,5 @@
       </backing-map-scheme>
       <autostart>true</autostart>
     </distributed-scheme>
-
   </caching-schemes>
 </cache-config>

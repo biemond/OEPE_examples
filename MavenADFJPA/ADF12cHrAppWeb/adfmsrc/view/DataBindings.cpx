@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Application version="12.01.02.0.0" ClientType="Generic" id="DataBindings" Package="view" SeparateXMLFiles="false" xmlns="http://xmlns.oracle.com/adfm/application">
+   <pageMap>
+      <page path="/start.xhtml" usageId="view_"/>
+   </pageMap>
+   <pageDefinitionUsages>
+      <page id="view_" path="view.pageDefs.startPageDef"/>
+   </pageDefinitionUsages>
+   <dataControlUsages>
+      <dc id="HrDataBeanLocal" path="model.HrDataBeanLocal"/>
+   </dataControlUsages>
+</Application>

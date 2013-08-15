@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Copyright (c) 2008, 2011, Oracle and/or its affiliates. All rights reserved. -->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          version="1.2">
+  <!-- All the CDATA sections have been removed from this file. -->
+  <!-- Please do not add CDATA tags, it screws up the ICE browser! -->
+  <jsp:directive.page contentType="text/html;charset=utf-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>Oracle Three Column Layout</display-name>
+        <facet>
+          <description>center</description>
+          <facet-name>center</facet-name>
+        </facet>
+        <facet>
+          <description>header</description>
+          <facet-name>header</facet-name>
+        </facet>
+        <facet>
+          <description>end</description>
+          <facet-name>end</facet-name>
+        </facet>
+        <facet>
+          <description>start</description>
+          <facet-name>start</facet-name>
+        </facet>
+        <facet>
+          <description>even though this facet is unused, it is still defined here for backward compatibility</description>
+          <facet-name>branding</facet-name>
+        </facet>
+        <facet>
+          <description>copyright</description>
+          <facet-name>copyright</facet-name>
+        </facet>
+        <facet>
+          <description>status</description>
+          <facet-name>status</facet-name>
+        </facet>
+        <attribute>
+          <description><![CDATA[Specifies the number of pixels tall that the global header content
+            should consume.]]></description>
+          <attribute-name>headerGlobalSize</attribute-name>
+          <attribute-class>int</attribute-class>
+          <default-value>30</default-value>
+        </attribute>
+        <attribute>
+          <description><![CDATA[Specifies the number of pixels tall that the global footer content
+            should consume.]]></description>
+          <attribute-name>footerGlobalSize</attribute-name>
+          <attribute-class>int</attribute-class>
+          <default-value>29</default-value>
+        </attribute>
+        <attribute>
+          <description>Specifies the width of the start column.</description>
+          <attribute-name>startColumnSize</attribute-name>
+          <attribute-class>int</attribute-class>
+          <default-value>170</default-value>
+        </attribute>
+        <attribute>
+          <description>Specifies the width of the end column.</description>
+          <attribute-name>endColumnSize</attribute-name>
+          <attribute-class>int</attribute-class>
+          <default-value>170</default-value>
+        </attribute>
+      </component>
+    </af:xmlContent>
+    <af:panelSplitter orientation="vertical" splitterPosition="#{attrs.headerGlobalSize}"
+                      id="glSp" firstBorder="none" secondBorder="none">
+      <f:facet name="first">
+        <af:panelGroupLayout id="gPbl" layout="scroll">
+          <af:panelBorderLayout id="brBar" styleClass="AFBrandingBar">
+            <f:facet name="start">
+              <af:panelGroupLayout id="brLogo" styleClass="AFBrandingBarItem"
+                                   inlineStyle="background-color: white;">
+                <af:spacer id="spLogo" shortDesc="Branding Logo" styleClass="AFBrandingBarLogo"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="innerStart">
+              <af:panelGroupLayout id="titleWrp" styleClass="AFBrandingBarItem"
+                                   inlineStyle="background-color: white;">
+                <af:panelGroupLayout id="titlePgl" layout="vertical" styleClass="AFBrandingBarTitle">
+                  <af:facetRef facetName="header"/>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </f:facet>
+            <af:panelBorderLayout id="sepWrp">
+              <!-- WARNING: hard-coding means no support for other skins -->
+              <af:image id="brSep" source="#{requestContext.rightToLeft?
+                                             '/afr/gradient-none-white.png':
+                                             '/afr/gradient-white-none.png'}"
+                        inlineStyle="width: 100%; max-width: 100%;"
+                        styleClass="AFBrandingBarItem" shortDesc=""/>
+              <f:facet name="end">
+                <af:panelGroupLayout id="statPgl" layout="vertical" styleClass="AFBrandingBarItem">
+                  <af:facetRef facetName="status"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelBorderLayout>
+            <f:facet name="innerEnd">
+              <af:spacer width="4" id="brEndSp"/>
+            </f:facet>
+            <f:facet name="end">
+              <af:panelGroupLayout id="statWrp" layout="horizontal" styleClass="AFBrandingBarItem">
+                <af:statusIndicator id="statInd"/>
+              </af:panelGroupLayout>
+            </f:facet>
+          </af:panelBorderLayout>
+        </af:panelGroupLayout>
+      </f:facet>
+      <f:facet name="second">
+        <af:panelSplitter id="cfootSp" orientation="vertical"
+                          splitterPosition="#{attrs.footerGlobalSize}"
+                          positionedFromEnd="true">
+          <f:facet name="first">
+            <af:decorativeBox id="contentBody" theme="contentBody">
+              <f:facet name="center">
+                <!-- start of secondary decoration -->
+                <af:decorativeBox id="light" theme="light">
+                  <f:facet name="center">
+                    <af:panelSplitter id="lightSp" orientation="horizontal"
+                                      splitterPosition="#{attrs.startColumnSize}">
+                      <f:facet name="first">
+                        <af:facetRef facetName="start"/>
+                      </f:facet>
+                      <f:facet name="second">
+                        <af:panelSplitter id="midSp" orientation="horizontal"
+                                          splitterPosition="#{attrs.endColumnSize}"
+                                          positionedFromEnd="true">
+                          <f:facet name="first">
+                            <!-- start of main decoration -->
+                            <af:decorativeBox id="default" theme="default">
+                              <f:facet name="center">
+                                <af:facetRef facetName="center"/>
+                              </f:facet>
+                            </af:decorativeBox>
+                            <!-- end of main decoration -->
+                          </f:facet>
+                          <f:facet name="second">
+                            <af:facetRef facetName="end"/>
+                          </f:facet>
+                        </af:panelSplitter>
+                      </f:facet>
+                    </af:panelSplitter>
+                  </f:facet>
+                </af:decorativeBox>
+                <!-- end of secondary decoration -->
+              </f:facet>
+            </af:decorativeBox>
+          </f:facet>
+          <f:facet name="second">
+            <af:panelGroupLayout id="footer" layout="vertical">
+              <af:panelBorderLayout id="footPbl" inlineStyle="width: 100%;">
+                <af:outputText id="footSp" value=" "/>
+                <f:facet name="end">
+                  <af:facetRef facetName="copyright"/>
+                </f:facet>
+              </af:panelBorderLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelSplitter>
+      </f:facet>
+    </af:panelSplitter><!-- end of global top splitter -->
+  </af:pageTemplateDef>
+</jsp:root>

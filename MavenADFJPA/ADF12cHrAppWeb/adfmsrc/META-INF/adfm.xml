@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<MetadataDirectory version="12.01.02.0.0" xmlns="http://xmlns.oracle.com/adfm/metainf">
+   <DataBindingRegistry path="view/DataBindings.cpx"/>
+</MetadataDirectory>

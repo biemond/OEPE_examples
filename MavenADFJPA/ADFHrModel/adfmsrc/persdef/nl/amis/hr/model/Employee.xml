@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PDefViewObject version="12.01.02.0.0" Name="Employee" xmlns="http://xmlns.oracle.com/bc4j">
+   <PDefAttribute Name="employeeId">
+      <Properties>
+         <SchemaBasedProperties>
+            <LABEL ResId="${adfBundle['model.ModelBundle']['nl.amis.hr.model.Employee.employeeId_LABEL']}"/>
+         </SchemaBasedProperties>
+      </Properties>
+   </PDefAttribute>
+</PDefViewObject>

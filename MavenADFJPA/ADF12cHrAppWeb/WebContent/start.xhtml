@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+	<af:document title="page title" id="d1">
+		<af:form id="f1">
+
+
+		<af:panelFormLayout id="p1">
+			<af:inputText
+				columns="#{bindings.departmentId.hints.displayWidth}"
+				label="#{bindings.departmentId.hints.label}"
+				maximumLength="#{bindings.departmentId.hints.precision}"
+				required="#{bindings.departmentId.hints.mandatory}"
+				shortDesc="#{bindings.departmentId.hints.tooltip}"
+				value="#{bindings.departmentId.inputValue}" id="i1">
+				<f:validator
+					binding="#{bindings.departmentId.validator}">
+				</f:validator>
+				<af:convertNumber groupingUsed="false"
+					pattern="#{bindings.departmentId.format}" id="c1">
+				</af:convertNumber>
+			</af:inputText>
+			<af:inputText
+				columns="#{bindings.departmentName.hints.displayWidth}"
+				label="#{bindings.departmentName.hints.label}"
+				maximumLength="#{bindings.departmentName.hints.precision}"
+				required="#{bindings.departmentName.hints.mandatory}"
+				shortDesc="#{bindings.departmentName.hints.tooltip}"
+				value="#{bindings.departmentName.inputValue}" id="i2">
+				<f:validator
+					binding="#{bindings.departmentName.validator}">
+				</f:validator>
+			</af:inputText>
+			<af:inputText
+				columns="#{bindings.locationId.hints.displayWidth}"
+				label="#{bindings.locationId.hints.label}"
+				maximumLength="#{bindings.locationId.hints.precision}"
+				required="#{bindings.locationId.hints.mandatory}"
+				shortDesc="#{bindings.locationId.hints.tooltip}"
+				value="#{bindings.locationId.inputValue}" id="i3">
+				<f:validator
+					binding="#{bindings.locationId.validator}">
+				</f:validator>
+				<af:convertNumber groupingUsed="false"
+					pattern="#{bindings.locationId.format}" id="c2">
+				</af:convertNumber>
+			</af:inputText>
+			<af:inputText
+				columns="#{bindings.managerId.hints.displayWidth}"
+				label="#{bindings.managerId.hints.label}"
+				maximumLength="#{bindings.managerId.hints.precision}"
+				required="#{bindings.managerId.hints.mandatory}"
+				shortDesc="#{bindings.managerId.hints.tooltip}"
+				value="#{bindings.managerId.inputValue}" id="i4">
+				<f:validator
+					binding="#{bindings.managerId.validator}">
+				</f:validator>
+				<af:convertNumber groupingUsed="false"
+					pattern="#{bindings.managerId.format}" id="c3">
+				</af:convertNumber>
+			</af:inputText>
+			<f:facet name="footer">
+				<af:panelGroupLayout layout="horizontal" id="p2">
+					<af:button
+						actionListener="#{bindings.First.execute}"
+						disabled="#{!bindings.First.enabled}" partialSubmit="true"
+						text="First" id="b1">
+					</af:button>
+					<af:button
+						actionListener="#{bindings.Previous.execute}"
+						disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+						text="Previous" id="b2">
+					</af:button>
+					<af:button actionListener="#{bindings.Next.execute}"
+						disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+						text="Next" id="b3">
+					</af:button>
+					<af:button actionListener="#{bindings.Last.execute}"
+						disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+						text="Last" id="b4">
+					</af:button>
+				</af:panelGroupLayout>
+			</f:facet>
+		</af:panelFormLayout>
+		</af:form>
+	</af:document>
+</f:view>

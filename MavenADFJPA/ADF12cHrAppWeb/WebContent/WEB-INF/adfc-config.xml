@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adfc-config
+    xmlns="http://xmlns.oracle.com/adf/controller"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.oracle.com/adf/controller http://xmlns.oracle.com/adf/controller/adfc-config_1_0.xsd"
+    version="1.2">
+    <view id="start">
+        <page>/start.xhtml</page>
+    </view>
+</adfc-config>
