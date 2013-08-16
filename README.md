@@ -22,3 +22,8 @@ CoherenceJPA
 ============
 Coherence JPA demo project deployed on a managed Coherece Server, Build with Eclipse OEPE 12.1.2 with a Coherence GAR / REST  
 Full with REST examples, direct queries + named queries 
+
+
+MavenADFJPA
+============
+Maven ADF JPA demo project deployed on a managed Server, Build with Eclipse OEPE 12.1.2     

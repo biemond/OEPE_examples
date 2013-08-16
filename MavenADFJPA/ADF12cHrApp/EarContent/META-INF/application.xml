@@ -10,4 +10,5 @@
   <module>
     <ejb>ADFHrModel.jar</ejb>
   </module>
+  <library-directory>lib</library-directory>
 </application>

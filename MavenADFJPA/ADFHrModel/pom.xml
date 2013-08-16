@@ -63,10 +63,22 @@
 
     <build>
         <sourceDirectory>src</sourceDirectory>
-		<directory>target</directory>
-		<outputDirectory>target/classes</outputDirectory>
-		<testOutputDirectory>target/test-classes</testOutputDirectory>
-
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+		<scriptSourceDirectory>src/main/scripts</scriptSourceDirectory>
+        <resources>
+            <resource>
+                <directory>src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+			</testResource>
+		</testResources>
+		
 		<finalName>ADFHrModel-0.0.1-SNAPSHOT</finalName>
 
         <pluginManagement>

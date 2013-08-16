@@ -36,10 +36,23 @@
 
     <build>
         <sourceDirectory>src</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+        <scriptSourceDirectory>src/main/scripts</scriptSourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
+
         <directory>target</directory>
         <outputDirectory>target/classes</outputDirectory>
         <testOutputDirectory>target/test-classes</testOutputDirectory>
-
+        
         <finalName>ADF12cHrApp-0.0.1-SNAPSHOT</finalName>
 
         <pluginManagement>
@@ -69,9 +82,10 @@
                         <user>${wls.user}</user>
                         <password>${wls.password}</password>
                         <upload>true</upload>
-                        <remote>false</remote>
+                        <remote>true</remote>
+                        <targets>${wls.targets}</targets>
                         <verbose>true</verbose>
-                        <source>target/ADF12cHrApp-0.0.1-SNAPSHOT.ear</source>
+                        <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
                         <name>ADF12cHrApp</name>
                     </configuration>
                 </plugin>
@@ -119,6 +133,7 @@
                             <defaultLibBundleDir>lib</defaultLibBundleDir>
                         </configuration>
                     </execution>
+                   
                 </executions>
                 <configuration>
                     <fileNameMapping>no-version</fileNameMapping>
@@ -176,6 +191,19 @@
                 <executions>
                     <execution>
                         <id>default-deploy</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.oracle.weblogic</groupId>
+                <artifactId>weblogic-maven-plugin</artifactId>
+                <executions>
+                    <!--Deploy the application to the server-->
+                    <execution>
                         <phase>deploy</phase>
                         <goals>
                             <goal>deploy</goal>
