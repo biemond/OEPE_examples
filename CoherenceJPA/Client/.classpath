@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Oracle WebLogic Server 12c (12.1.2) JRE">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="oracle.eclipse.tools.coherence.lib.omw">
+		<attributes>
+			<attribute name="owner.project.facets" value="oracle.coherence"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/HrJPA"/>
+	<classpathentry kind="lib" path="/Users/edwin/Oracle/EclipseMiddleware12.1.2/oracle_common/modules/oracle.toplink_12.1.2/eclipselink.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

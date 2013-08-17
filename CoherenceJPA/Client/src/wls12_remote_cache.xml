@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE cache-config SYSTEM "cache-config.dtd">
+<cache-config>
+  <caching-scheme-mapping>
+    <cache-mapping>
+      <cache-name>Employee</cache-name>
+      <scheme-name>remote</scheme-name>
+    </cache-mapping>
+    <cache-mapping>
+      <cache-name>Department</cache-name>
+      <scheme-name>remote</scheme-name>
+    </cache-mapping>
+  </caching-scheme-mapping>
+
+  <caching-schemes>
+    <remote-cache-scheme>
+      <scheme-name>remote</scheme-name>
+      <service-name>ExtendTcpCacheService</service-name>
+      <initiator-config>
+        <connect-timeout>10s</connect-timeout>
+        <tcp-initiator>
+          <remote-addresses>
+            <socket-address>
+              <address>wls12</address>
+              <port>8088</port>
+            </socket-address>
+          </remote-addresses>
+        </tcp-initiator>
+        <outgoing-message-handler>
+          <request-timeout>5s</request-timeout>
+        </outgoing-message-handler>
+      </initiator-config>
+    </remote-cache-scheme>
+ 
+    <remote-invocation-scheme>
+      <scheme-name>extend-invocation</scheme-name>
+      <service-name>ExtendTcpInvocationService</service-name>
+      <initiator-config>
+        <connect-timeout>10s</connect-timeout>
+        <tcp-initiator>
+          <remote-addresses>
+            <socket-address>
+              <address>wls12</address>
+              <port>8088</port>
+            </socket-address>
+          </remote-addresses>
+        </tcp-initiator>
+        <outgoing-message-handler>
+          <request-timeout>5s</request-timeout>
+        </outgoing-message-handler>
+      </initiator-config>
+    </remote-invocation-scheme>
+  </caching-schemes>
+</cache-config>

@@ -5,7 +5,9 @@
  
   <defaults>
     <serializer system-property="tangosol.coherence.serializer"/>
-    <socket-provider system-property="tangosol.coherence.socketprovider">tcp</socket-provider>
+    <socket-provider system-property="tangosol.coherence.socketprovider">
+            <tcp />
+    </socket-provider>
   </defaults>
   <caching-scheme-mapping>
     <cache-mapping>
@@ -45,5 +47,20 @@
       </backing-map-scheme>
       <autostart>true</autostart>
     </distributed-scheme>
+    <proxy-scheme>
+         <service-name>ExtendTcpProxyService</service-name>
+         <acceptor-config>
+            <tcp-acceptor>
+               <socket-provider>
+                        <tcp />
+               </socket-provider>
+               <local-address>
+                  <address>192.168.33.142</address>
+                  <port>8088</port>
+               </local-address>
+            </tcp-acceptor>
+         </acceptor-config>
+         <autostart>true</autostart>
+      </proxy-scheme>
   </caching-schemes>
 </cache-config>
