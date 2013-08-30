@@ -6,7 +6,7 @@
    <pageDefinitionUsages>
       <page id="view_" path="view.pageDefs.startPageDef"/>
    </pageDefinitionUsages>
-   <dataControlUsages>
+<dataControlUsages>
       <dc id="HrDataBeanLocal" path="model.HrDataBeanLocal"/>
    </dataControlUsages>
 </Application>

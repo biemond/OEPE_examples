@@ -4,6 +4,7 @@
    <executables>
       <iterator Binds="root" RangeSize="25" DataControl="HrDataBeanLocal" id="HrDataBeanLocalIterator" ChangeEventPolicy="ppr"/>
       <accessorIterator MasterBinding="HrDataBeanLocalIterator" Binds="departmentFindAll" RangeSize="25" DataControl="HrDataBeanLocal" BeanClass="nl.amis.hr.model.Department" id="departmentFindAllIterator" ChangeEventPolicy="ppr"/>
+      <accessorIterator MasterBinding="departmentFindAllIterator" Binds="manager" RangeSize="25" DataControl="HrDataBeanLocal" BeanClass="nl.amis.hr.model.Employee" id="managerIterator" ChangeEventPolicy="ppr"/>
    </executables>
    <bindings>
       <attributeValues IterBinding="departmentFindAllIterator" id="departmentId">
@@ -24,6 +25,51 @@
       <attributeValues IterBinding="departmentFindAllIterator" id="managerId">
          <AttrNames>
             <Item Value="managerId"/>
+         </AttrNames>
+      </attributeValues>
+      <attributeValues IterBinding="managerIterator" id="employeeId">
+         <AttrNames>
+            <Item Value="employeeId"/>
+         </AttrNames>
+      </attributeValues>
+      <attributeValues IterBinding="managerIterator" id="commissionPct">
+         <AttrNames>
+            <Item Value="commissionPct"/>
+         </AttrNames>
+      </attributeValues>
+      <attributeValues IterBinding="managerIterator" id="email">
+         <AttrNames>
+            <Item Value="email"/>
+         </AttrNames>
+      </attributeValues>
+      <attributeValues IterBinding="managerIterator" id="firstName">
+         <AttrNames>
+            <Item Value="firstName"/>
+         </AttrNames>
+      </attributeValues>
+      <attributeValues IterBinding="managerIterator" id="hireDate">
+         <AttrNames>
+            <Item Value="hireDate"/>
+         </AttrNames>
+      </attributeValues>
+      <attributeValues IterBinding="managerIterator" id="jobId">
+         <AttrNames>
+            <Item Value="jobId"/>
+         </AttrNames>
+      </attributeValues>
+      <attributeValues IterBinding="managerIterator" id="lastName">
+         <AttrNames>
+            <Item Value="lastName"/>
+         </AttrNames>
+      </attributeValues>
+      <attributeValues IterBinding="managerIterator" id="phoneNumber">
+         <AttrNames>
+            <Item Value="phoneNumber"/>
+         </AttrNames>
+      </attributeValues>
+      <attributeValues IterBinding="managerIterator" id="salary">
+         <AttrNames>
+            <Item Value="salary"/>
          </AttrNames>
       </attributeValues>
       <action IterBinding="departmentFindAllIterator" id="First" RequiresUpdateModel="true" Action="first"/>

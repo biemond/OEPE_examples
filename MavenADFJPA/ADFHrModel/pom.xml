@@ -1,158 +1,125 @@
-<?xml version="1.0"?>
-<project
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>nl.amis.oepe</groupId>
-    <artifactId>ADFHrModel</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-
-    <packaging>ejb</packaging>
-
-    <properties>
-        <adf.archetype.version>12.1.2-0-0</adf.archetype.version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.oracle.adf.library</groupId>
-            <artifactId>TopLink</artifactId>
-            <version>12.1.2-0-0</version>
-            <type>pom</type>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.oracle.adf.library</groupId>
-            <artifactId>Java-EE</artifactId>
-            <version>12.1.2-0-0</version>
-            <type>pom</type>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.oracle.adf.library</groupId>
-            <artifactId>ADF-Model-Runtime</artifactId>
-            <version>12.1.2-0-0</version>
-            <type>pom</type>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.oracle.adf.library</groupId>
-            <artifactId>ADF-Model-Generic-Runtime</artifactId>
-            <version>12.1.2-0-0</version>
-            <type>pom</type>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.oracle.adf.library</groupId>
-            <artifactId>Oracle-XML-Parser-v2</artifactId>
-            <version>12.1.2-0-0</version>
-            <type>pom</type>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
-
-
-
-
-    <build>
-        <sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>src/test/java</testSourceDirectory>
-		<scriptSourceDirectory>src/main/scripts</scriptSourceDirectory>
-        <resources>
-            <resource>
-                <directory>src</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-        </resources>
-		<testResources>
-			<testResource>
-				<directory>src/test/resources</directory>
-			</testResource>
-		</testResources>
-		
-		<finalName>ADFHrModel-0.0.1-SNAPSHOT</finalName>
-
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>org.codehaus.mojo</groupId>
-                                        <artifactId>build-helper-maven-plugin</artifactId>
-                                        <versionRange>[1.7,)</versionRange>
-                                        <goals>
-                                            <goal>add-resource</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore/>
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.0</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <artifactId>maven-ejb-plugin</artifactId>
-                <version>2.3</version>
-                <configuration>
-                    <ejbVersion>3.1</ejbVersion>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>1.7</version>
-                <executions>
-                    <execution>
-                        <id>add-resource</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>add-resource</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>adfmsrc</directory>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
-  <distributionManagement>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>nl.amis.oepe</groupId>
+  <artifactId>ADFHrModel</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>ejb</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>com.oracle.adf.library</groupId>
+      <artifactId>TopLink</artifactId>
+      <version>12.1.2-0-0</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.adf.library</groupId>
+      <artifactId>Java-EE</artifactId>
+      <version>12.1.2-0-0</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.adf.library</groupId>
+      <artifactId>ADF-Model-Runtime</artifactId>
+      <version>12.1.2-0-0</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.adf.library</groupId>
+      <artifactId>ADF-Model-Generic-Runtime</artifactId>
+      <version>12.1.2-0-0</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.adf.library</groupId>
+      <artifactId>Oracle-XML-Parser-v2</artifactId>
+      <version>12.1.2-0-0</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <versionRange>[1.7,)</versionRange>
+                    <goals>
+                      <goal>add-resource</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore/>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-ejb-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <ejbVersion>3.1</ejbVersion>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>add-resource</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>add-resource</goal>
+            </goals>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>adfmsrc</directory>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+ 
+   <distributionManagement>
      <repository>
        <id>central</id>
        <name>hudson.alfa.local-releases</name>
@@ -166,5 +133,6 @@
        <uniqueVersion>false</uniqueVersion>
      </snapshotRepository>
   </distributionManagement>
-
+  
+  
 </project>
