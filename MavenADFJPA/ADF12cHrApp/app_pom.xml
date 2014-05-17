@@ -2,26 +2,33 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>nl.amis.oepe</groupId>
   <artifactId>ADF12cHrApp</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>pom</packaging>
   <modules>
     <module>../ADFHrModel</module>
     <module>../ADF12cHrAppWeb</module>
   </modules>
 
+  <scm>
+    <connection>scm:git:git@github.com:biemond/soa_tools.git</connection>
+    <developerConnection>scm:git:git@github.com:biemond/soa_tools.git</developerConnection>
+    <url>https://github.com/biemond/soa_tools/tree/master/maven_osb_ps6</url>
+    <tag>osb.0.2.0</tag>
+  </scm> 
+
   <distributionManagement>
-     <repository>
-       <id>central</id>
-       <name>hudson.alfa.local-releases</name>
-       <url>http://hudson:8081/artifactory/libs-release-local</url>
-       <uniqueVersion>false</uniqueVersion>
-     </repository>
-     <snapshotRepository>
-       <id>snapshots</id>
-       <name>hudson.alfa.local-snapshots</name>
-       <url>http://hudson:8081/artifactory/libs-snapshot-local</url>
-       <uniqueVersion>false</uniqueVersion>
-     </snapshotRepository>
+    <repository>
+      <id>central</id>
+      <name>nexus-releases</name>
+      <url>http://localhost:8081/nexus/content/repositories/releases</url>
+      <uniqueVersion>false</uniqueVersion>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>nexus-snapshots</name>
+      <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
   </distributionManagement>
 
 </project>

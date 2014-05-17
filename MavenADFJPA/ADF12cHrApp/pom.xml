@@ -26,24 +26,7 @@
     </dependency>
   </dependencies>
  
-  <pluginRepositories>
-    <pluginRepository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>central</id>
-      <name>plugins-release</name>
-      <url>http://hudson:8081/artifactory/plugins-release</url>
-    </pluginRepository>
-    <pluginRepository>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>snapshots</id>
-      <name>plugins-snapshot</name>
-      <url>http://hudson:8081/artifactory/plugins-snapshot</url>
-    </pluginRepository>
-  </pluginRepositories>
+
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
     <scriptSourceDirectory>src/main/scripts</scriptSourceDirectory>
@@ -269,21 +252,19 @@
 
 
   <distributionManagement>
-     <repository>
-       <id>central</id>
-       <name>hudson.alfa.local-releases</name>
-       <url>http://hudson:8081/artifactory/libs-release-local</url>
-       <uniqueVersion>false</uniqueVersion>
-     </repository>
-     <snapshotRepository>
-       <id>snapshots</id>
-       <name>hudson.alfa.local-snapshots</name>
-       <url>http://hudson:8081/artifactory/libs-snapshot-local</url>
-       <uniqueVersion>false</uniqueVersion>
-     </snapshotRepository>
+    <repository>
+      <id>central</id>
+      <name>nexus-releases</name>
+      <url>http://localhost:8081/nexus/content/repositories/releases</url>
+      <uniqueVersion>false</uniqueVersion>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>nexus-snapshots</name>
+      <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
   </distributionManagement>
-
-
   
   
 </project>

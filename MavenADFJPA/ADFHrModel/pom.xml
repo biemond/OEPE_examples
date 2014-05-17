@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>nl.amis.oepe</groupId>
   <artifactId>ADFHrModel</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>ejb</packaging>
   <dependencies>
     <dependency>
@@ -70,7 +70,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore/>
+                    <ignore />
                   </action>
                 </pluginExecution>
               </pluginExecutions>
@@ -119,20 +119,19 @@
     </plugins>
   </build>
  
-   <distributionManagement>
-     <repository>
-       <id>central</id>
-       <name>hudson.alfa.local-releases</name>
-       <url>http://hudson:8081/artifactory/libs-release-local</url>
-       <uniqueVersion>false</uniqueVersion>
-     </repository>
-     <snapshotRepository>
-       <id>snapshots</id>
-       <name>hudson.alfa.local-snapshots</name>
-       <url>http://hudson:8081/artifactory/libs-snapshot-local</url>
-       <uniqueVersion>false</uniqueVersion>
-     </snapshotRepository>
+  <distributionManagement>
+    <repository>
+      <id>central</id>
+      <name>nexus-releases</name>
+      <url>http://localhost:8081/nexus/content/repositories/releases</url>
+      <uniqueVersion>false</uniqueVersion>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>nexus-snapshots</name>
+      <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+      <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
   </distributionManagement>
-  
   
 </project>
