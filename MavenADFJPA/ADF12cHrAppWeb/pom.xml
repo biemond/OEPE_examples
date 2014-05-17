@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>nl.amis.oepe</groupId>
   <artifactId>ADF12cHrAppWeb</artifactId>
-  <version>0.0.2-snapshot</version>
+  <version>0.0.2-SNAPSHOT</version>
   <packaging>war</packaging>
   <properties>
 
@@ -159,7 +159,7 @@
     <dependency>
       <groupId>nl.amis.oepe</groupId>
       <artifactId>ADFHrModel</artifactId>
-      <version>0.0.2-snapshot</version>
+      <version>0.0.2-SNAPSHOT</version>
       <type>ejb</type>
       <scope>provided</scope>
     </dependency>
