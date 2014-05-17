@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>nl.amis.oepe</groupId>
   <artifactId>ADFHrModel</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2-snapshot</version>
   <packaging>ejb</packaging>
   <dependencies>
     <dependency>
@@ -122,13 +122,13 @@
   <distributionManagement>
     <repository>
       <id>central</id>
-      <name>nexus-releases</name>
+      <name>releases</name>
       <url>http://localhost:8081/nexus/content/repositories/releases</url>
       <uniqueVersion>false</uniqueVersion>
     </repository>
     <snapshotRepository>
       <id>snapshots</id>
-      <name>nexus-snapshots</name>
+      <name>snapshots</name>
       <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
       <uniqueVersion>false</uniqueVersion>
     </snapshotRepository>

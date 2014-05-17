@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>nl.amis.oepe</groupId>
   <artifactId>ADF12cHr</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
   <packaging>ear</packaging>
   <properties>
 
@@ -13,14 +13,14 @@
     <dependency>
       <groupId>nl.amis.oepe</groupId>
       <artifactId>ADF12cHrAppWeb</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>0.0.2-SNAPSHOT</version>
       <type>war</type>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>nl.amis.oepe</groupId>
       <artifactId>ADFHrModel</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>0.0.2-SNAPSHOT</version>
       <type>ejb</type>
       <scope>compile</scope>
     </dependency>
@@ -249,7 +249,6 @@
   <reporting>
     <outputDirectory>target/site</outputDirectory>
   </reporting>
-
 
   <distributionManagement>
     <repository>

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>nl.amis.oepe</groupId>
   <artifactId>ADF12cHrAppWeb</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2-snapshot</version>
   <packaging>war</packaging>
   <properties>
 
@@ -159,7 +159,7 @@
     <dependency>
       <groupId>nl.amis.oepe</groupId>
       <artifactId>ADFHrModel</artifactId>
-      <version>0.0.1</version>
+      <version>0.0.2-snapshot</version>
       <type>ejb</type>
       <scope>provided</scope>
     </dependency>
@@ -185,7 +185,7 @@
       </testResource>
     </testResources>
     <directory>target</directory>
-    <finalName>ADF12cHrAppWeb-0.0.1-SNAPSHOT</finalName>
+    <finalName>ADF12cHrAppWeb-0.0.2-SNAPSHOT</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -429,6 +429,7 @@
   <reporting>
     <outputDirectory>target/site</outputDirectory>
   </reporting>
+
  
   <distributionManagement>
     <repository>
